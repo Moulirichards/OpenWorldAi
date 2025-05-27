@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Mic, MicOff, Search, Menu, X } from 'lucide-react';
+import { Mic, MicOff, Search, Menu, X, Waves } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Header = () => {
@@ -13,49 +13,53 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
+    <header className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 shadow-lg border-b border-blue-500/20 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <div className="flex items-center">
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg p-2 mr-3">
-              <span className="text-xl font-bold">OW</span>
+          {/* Interactive Logo */}
+          <div className="flex items-center group cursor-pointer">
+            <div className="relative bg-gradient-to-br from-white to-blue-100 text-blue-600 rounded-xl p-2 mr-3 transform group-hover:scale-110 transition-all duration-300 shadow-lg">
+              <div className="flex items-center space-x-1">
+                <Mic className="h-6 w-6" />
+                <Waves className="h-4 w-4 animate-pulse" />
+              </div>
+              <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
             </div>
-            <div>
-              <h1 className="text-xl font-bold text-gray-900">Open World AI</h1>
-              <p className="text-xs text-gray-500 hidden sm:block">AI for Everyone</p>
+            <div className="group-hover:scale-105 transition-transform duration-300">
+              <h1 className="text-xl font-bold text-white drop-shadow-sm">Open World AI</h1>
+              <p className="text-xs text-blue-100 hidden sm:block">AI for Everyone</p>
             </div>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
-            <a href="/" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">Home</a>
-            <a href="/learn" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">Learn</a>
-            <a href="/services" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">Services</a>
-            <a href="/about" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">About</a>
-            <a href="/careers" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">Careers</a>
-            <a href="/contact" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">Contact</a>
+            <a href="/" className="text-white/90 hover:text-white font-medium transition-all duration-200 hover:scale-105 px-3 py-2 rounded-lg hover:bg-white/10">Home</a>
+            <a href="/learn" className="text-white/90 hover:text-white font-medium transition-all duration-200 hover:scale-105 px-3 py-2 rounded-lg hover:bg-white/10">Learn</a>
+            <a href="/services" className="text-white/90 hover:text-white font-medium transition-all duration-200 hover:scale-105 px-3 py-2 rounded-lg hover:bg-white/10">Services</a>
+            <a href="/about" className="text-white/90 hover:text-white font-medium transition-all duration-200 hover:scale-105 px-3 py-2 rounded-lg hover:bg-white/10">About</a>
+            <a href="/careers" className="text-white/90 hover:text-white font-medium transition-all duration-200 hover:scale-105 px-3 py-2 rounded-lg hover:bg-white/10">Careers</a>
+            <a href="/contact" className="text-white/90 hover:text-white font-medium transition-all duration-200 hover:scale-105 px-3 py-2 rounded-lg hover:bg-white/10">Contact</a>
           </nav>
 
           {/* Voice & Language Controls */}
           <div className="flex items-center space-x-3">
             {/* Language Selector */}
-            <select className="bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 text-sm font-medium text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
-              <option value="en">🇺🇸 English</option>
-              <option value="es">🇪🇸 Español</option>
-              <option value="fr">🇫🇷 Français</option>
-              <option value="hi">🇮🇳 हिंदी</option>
-              <option value="ar">🇸🇦 العربية</option>
-              <option value="zh">🇨🇳 中文</option>
+            <select className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg px-3 py-2 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-white/50 focus:bg-white/20">
+              <option value="en" className="text-gray-800">🇺🇸 English</option>
+              <option value="es" className="text-gray-800">🇪🇸 Español</option>
+              <option value="fr" className="text-gray-800">🇫🇷 Français</option>
+              <option value="hi" className="text-gray-800">🇮🇳 हिंदी</option>
+              <option value="ar" className="text-gray-800">🇸🇦 العربية</option>
+              <option value="zh" className="text-gray-800">🇨🇳 中文</option>
             </select>
 
             {/* Voice Button */}
             <Button
               onClick={toggleVoice}
-              className={`p-3 rounded-full transition-all duration-300 ${
+              className={`p-3 rounded-full transition-all duration-300 border-2 ${
                 isListening 
-                  ? 'bg-red-500 hover:bg-red-600 animate-pulse' 
-                  : 'bg-blue-600 hover:bg-blue-700'
+                  ? 'bg-red-500 hover:bg-red-600 animate-pulse border-red-300 shadow-lg shadow-red-200' 
+                  : 'bg-white/20 hover:bg-white/30 border-white/30 backdrop-blur-sm shadow-lg'
               }`}
               size="sm"
             >
@@ -69,12 +73,12 @@ const Header = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors"
+              className="md:hidden p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors border border-white/20"
             >
               {isMenuOpen ? (
-                <X className="h-5 w-5 text-gray-600" />
+                <X className="h-5 w-5 text-white" />
               ) : (
-                <Menu className="h-5 w-5 text-gray-600" />
+                <Menu className="h-5 w-5 text-white" />
               )}
             </button>
           </div>
@@ -82,14 +86,14 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-gray-100 py-4">
+          <div className="md:hidden border-t border-white/20 py-4 bg-white/5 backdrop-blur-sm rounded-b-lg">
             <div className="flex flex-col space-y-3">
-              <a href="/" className="text-gray-600 hover:text-blue-600 font-medium py-2 transition-colors">Home</a>
-              <a href="/learn" className="text-gray-600 hover:text-blue-600 font-medium py-2 transition-colors">Learn</a>
-              <a href="/services" className="text-gray-600 hover:text-blue-600 font-medium py-2 transition-colors">Services</a>
-              <a href="/about" className="text-gray-600 hover:text-blue-600 font-medium py-2 transition-colors">About</a>
-              <a href="/careers" className="text-gray-600 hover:text-blue-600 font-medium py-2 transition-colors">Careers</a>
-              <a href="/contact" className="text-gray-600 hover:text-blue-600 font-medium py-2 transition-colors">Contact</a>
+              <a href="/" className="text-white/90 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-white/10">Home</a>
+              <a href="/learn" className="text-white/90 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-white/10">Learn</a>
+              <a href="/services" className="text-white/90 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-white/10">Services</a>
+              <a href="/about" className="text-white/90 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-white/10">About</a>
+              <a href="/careers" className="text-white/90 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-white/10">Careers</a>
+              <a href="/contact" className="text-white/90 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-white/10">Contact</a>
             </div>
           </div>
         )}

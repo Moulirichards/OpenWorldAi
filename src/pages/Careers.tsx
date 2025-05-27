@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { MapPin, Clock, Users, Globe, Briefcase, Heart, ArrowRight, Play } from 'lucide-react';
 import Header from '@/components/Header';
@@ -87,12 +86,16 @@ const Careers = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 text-white py-20 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-24 h-24 bg-purple-300 rounded-full animate-bounce"></div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
           <div className="flex justify-center mb-6">
             <VoiceButton size="lg" className="mb-4" />
           </div>
@@ -102,11 +105,11 @@ const Careers = () => {
             Be part of a team that's breaking down barriers and creating opportunities for all.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg">
+            <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg font-semibold border-0">
               <Play className="h-5 w-5 mr-2" />
               Listen to Our Story
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg">
+            <Button size="lg" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg font-semibold">
               View Open Positions
             </Button>
           </div>
@@ -114,7 +117,7 @@ const Careers = () => {
       </section>
 
       {/* Why Join Us */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white/80 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Open World AI?</h2>
@@ -125,7 +128,7 @@ const Careers = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {benefits.map((benefit, index) => (
-              <Card key={index} className="p-6 text-center hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
+              <Card key={index} className="p-6 text-center hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-white/90 backdrop-blur-sm">
                 <div className={`p-4 rounded-full ${benefit.color} mx-auto mb-4 w-fit`}>
                   {benefit.icon}
                 </div>
@@ -138,7 +141,7 @@ const Careers = () => {
       </section>
 
       {/* Open Positions */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gradient-to-r from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Open Positions</h2>
@@ -149,7 +152,7 @@ const Careers = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {jobOpenings.map((job, index) => (
-              <Card key={index} className="p-6 hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
+              <Card key={index} className="p-6 hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-white/90 backdrop-blur-sm">
                 <div className="flex justify-between items-start mb-4">
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 mb-2">{job.title}</h3>
@@ -168,7 +171,7 @@ const Careers = () => {
                       </span>
                     </div>
                   </div>
-                  <Button size="sm" variant="outline" className="rounded-full">
+                  <Button size="sm" className="rounded-full bg-blue-600 hover:bg-blue-700 text-white border-0">
                     <Play className="h-4 w-4" />
                   </Button>
                 </div>
@@ -187,7 +190,7 @@ const Careers = () => {
                   </ul>
                 </div>
                 
-                <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold border-0">
                   Apply Now
                   <ArrowRight className="h-4 w-4 ml-2" />
                 </Button>
@@ -198,7 +201,7 @@ const Careers = () => {
       </section>
 
       {/* Culture & Values */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white/80 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -241,7 +244,7 @@ const Careers = () => {
               <div className="text-6xl mb-4">🌍</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">50+ Countries</h3>
               <p className="text-gray-600 mb-6">Our team represents the diversity of our global user base</p>
-              <Button className="bg-blue-600 hover:bg-blue-700">
+              <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold border-0">
                 Meet Our Team
               </Button>
             </div>
@@ -250,7 +253,7 @@ const Careers = () => {
       </section>
 
       {/* Application Process */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gradient-to-r from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Application Process</h2>
@@ -285,10 +288,10 @@ const Careers = () => {
             Your skills can help break down barriers and create opportunities for millions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg">
+            <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg font-semibold border-0">
               Browse All Positions
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg">
+            <Button size="lg" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg font-semibold">
               Contact HR Team
             </Button>
           </div>
