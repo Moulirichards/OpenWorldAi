@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -6,15 +5,16 @@ import VoiceButton from '@/components/VoiceButton';
 import { BookOpen, Play, Volume2, Star, Clock, Users } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Learn = () => {
   const categories = [
-    { name: "Basic Technology", icon: "💻", count: 12, color: "bg-blue-100 text-blue-800" },
-    { name: "Health & Wellness", icon: "🏥", count: 15, color: "bg-red-100 text-red-800" },
-    { name: "Financial Literacy", icon: "💰", count: 10, color: "bg-green-100 text-green-800" },
-    { name: "Job Skills", icon: "💼", count: 18, color: "bg-purple-100 text-purple-800" },
-    { name: "Education Basics", icon: "📚", count: 20, color: "bg-indigo-100 text-indigo-800" },
-    { name: "Agriculture & Farming", icon: "🌱", count: 8, color: "bg-emerald-100 text-emerald-800" }
+    { name: "Basic Technology", icon: "💻", count: 12, color: "bg-blue-100 text-blue-800", path: "/learn/basic-technology" },
+    { name: "Health & Wellness", icon: "🏥", count: 15, color: "bg-red-100 text-red-800", path: "/learn/health-wellness" },
+    { name: "Financial Literacy", icon: "💰", count: 10, color: "bg-green-100 text-green-800", path: "/learn/financial-literacy" },
+    { name: "Job Skills", icon: "💼", count: 18, color: "bg-purple-100 text-purple-800", path: "/learn/job-skills" },
+    { name: "Education Basics", icon: "📚", count: 20, color: "bg-indigo-100 text-indigo-800", path: "/learn/education-basics" },
+    { name: "Agriculture & Farming", icon: "🌱", count: 8, color: "bg-emerald-100 text-emerald-800", path: "/learn/agriculture" }
   ];
 
   const featuredLessons = [
@@ -81,10 +81,12 @@ const Learn = () => {
                     {category.count} lessons
                   </div>
                   <div className="flex items-center justify-center space-x-2">
-                    <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
-                      <BookOpen className="h-4 w-4 mr-1" />
-                      Browse
-                    </Button>
+                    <Link to={category.path}>
+                      <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
+                        <BookOpen className="h-4 w-4 mr-1" />
+                        Browse
+                      </Button>
+                    </Link>
                     <Button size="sm" variant="outline">
                       <Volume2 className="h-4 w-4 mr-1" />
                       Listen

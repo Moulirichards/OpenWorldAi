@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Mic, BookOpen, MessageCircle, Globe, Play, ArrowRight } from 'lucide-react';
 import Header from '@/components/Header';
@@ -8,12 +7,13 @@ import ServicesSection from '@/components/ServicesSection';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { Link } from 'react-router-dom';
 
 const Index = () => {
   const quickActions = [
     {
       title: "Learn",
-      description: "Voice-guided lessons",
+      description: "Voice lessons",
       icon: <BookOpen className="h-8 w-8" />,
       color: "bg-gradient-to-br from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700",
       path: "/learn"
@@ -107,21 +107,21 @@ const Index = () => {
             {/* Quick Action Buttons */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
               {quickActions.map((action, index) => (
-                <Button
-                  key={index}
-                  onClick={() => handleQuickAction(action.path)}
-                  className={`${action.color} text-white p-6 h-auto rounded-2xl transition-all duration-300 hover:scale-105 shadow-xl border-0 min-h-[140px] flex flex-col justify-center`}
-                >
-                  <div className="flex flex-col items-center space-y-3">
-                    <div className="bg-white/20 rounded-full p-3">
-                      {action.icon}
+                <Link key={index} to={action.path}>
+                  <Button
+                    className={`${action.color} text-white p-6 h-auto rounded-2xl transition-all duration-300 hover:scale-105 shadow-xl border-0 min-h-[140px] flex flex-col justify-center w-full`}
+                  >
+                    <div className="flex flex-col items-center space-y-3">
+                      <div className="bg-white/20 rounded-full p-3">
+                        {action.icon}
+                      </div>
+                      <div className="text-center space-y-1">
+                        <h3 className="font-bold text-lg text-white leading-tight">{action.title}</h3>
+                        <p className="text-sm text-white/95 leading-relaxed">{action.description}</p>
+                      </div>
                     </div>
-                    <div className="text-center space-y-1">
-                      <h3 className="font-bold text-lg text-white leading-tight">{action.title}</h3>
-                      <p className="text-sm text-white/95 leading-relaxed">{action.description}</p>
-                    </div>
-                  </div>
-                </Button>
+                  </Button>
+                </Link>
               ))}
             </div>
           </div>
@@ -184,9 +184,11 @@ const Index = () => {
             Join millions of people worldwide who are already learning and growing with AI assistance
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button className="bg-white text-indigo-600 hover:bg-indigo-50 px-10 py-5 text-lg font-semibold rounded-full border-0 shadow-xl">
-              🎤 Start Speaking Now
-            </Button>
+            <Link to="/ask">
+              <Button className="bg-white text-indigo-600 hover:bg-indigo-50 px-10 py-5 text-lg font-semibold rounded-full border-0 shadow-xl">
+                🎤 Start Speaking Now
+              </Button>
+            </Link>
             <Button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-indigo-600 px-10 py-5 text-lg font-semibold rounded-full">
               📱 Download App
             </Button>
