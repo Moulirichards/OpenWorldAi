@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mic, BookOpen, MessageCircle, Globe, Play, ArrowRight, Sparkles, Zap, Stars } from 'lucide-react';
+import { Mic, BookOpen, MessageCircle, Globe, Play, ArrowRight } from 'lucide-react';
 import Header from '@/components/Header';
 import VoiceButton from '@/components/VoiceButton';
 import AIForEveryoneSection from '@/components/AIForEveryoneSection';
@@ -65,40 +65,27 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
       <Header />
       
-      {/* Hero Section - More Dynamic */}
-      <section className="bg-gradient-to-br from-indigo-100 via-purple-100 to-pink-100 py-20 relative overflow-hidden">
-        {/* Enhanced Animated background elements */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-pulse"></div>
-          <div className="absolute top-32 right-20 w-24 h-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full animate-bounce"></div>
-          <div className="absolute bottom-20 left-1/4 w-20 h-20 bg-gradient-to-r from-green-500 to-blue-500 rounded-full animate-ping"></div>
-          <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full animate-pulse"></div>
-          <Sparkles className="absolute top-20 right-40 h-8 w-8 text-purple-400 animate-spin" />
-          <Zap className="absolute bottom-32 right-20 h-6 w-6 text-yellow-500 animate-bounce" />
-          <Stars className="absolute top-40 left-20 h-10 w-10 text-pink-400 animate-pulse" />
-        </div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-indigo-100 via-purple-100 to-pink-100 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            {/* Enhanced Main Title */}
+            {/* Main Title */}
             <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight">
               AI for All: Empowering Every Voice,{' '}
-              <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-pulse">
+              <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
                 Everywhere
               </span>
             </h1>
             
-            {/* Enhanced Tagline */}
+            {/* Tagline */}
             <p className="text-xl md:text-3xl bg-gradient-to-r from-gray-700 to-gray-600 bg-clip-text text-transparent mb-12 max-w-4xl mx-auto font-medium">
               🌍 Connecting the World, One Voice at a Time ✨
             </p>
 
-            {/* Enhanced Main Voice Interface */}
-            <div className="bg-white/90 backdrop-blur-lg rounded-3xl shadow-2xl p-10 max-w-2xl mx-auto mb-16 border border-purple-200/50 relative overflow-hidden">
-              {/* Animated background gradient */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-50/50 via-purple-50/50 to-pink-50/50 animate-pulse"></div>
-              <div className="relative text-center">
-                <VoiceButton size="lg" className="mb-6 shadow-2xl hover:shadow-purple-200" />
+            {/* Main Voice Interface */}
+            <div className="bg-white/90 backdrop-blur-lg rounded-3xl shadow-xl p-10 max-w-2xl mx-auto mb-16 border border-purple-200/50">
+              <div className="text-center">
+                <VoiceButton size="lg" className="mb-6 shadow-lg" />
                 <h2 className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
                   🎤 Talk to AI Now
                 </h2>
@@ -117,7 +104,7 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Fixed Quick Action Buttons with proper text sizing */}
+            {/* Quick Action Buttons */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
               {quickActions.map((action, index) => (
                 <Button
@@ -141,12 +128,12 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Enhanced Featured Cards */}
+      {/* Featured Cards */}
       <section className="py-20 bg-gradient-to-r from-gray-50 to-indigo-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {featuredCards.map((card, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-2xl transition-all duration-500 border-0 shadow-xl bg-white/95 backdrop-blur-sm hover:scale-105">
+              <Card key={index} className="overflow-hidden hover:shadow-xl transition-shadow duration-300 border-0 shadow-lg bg-white/95">
                 <div className="relative h-72">
                   <img
                     src={`https://images.unsplash.com/${card.image}?auto=format&fit=crop&w=800&q=80`}
@@ -156,7 +143,7 @@ const Index = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                   <div className="absolute bottom-6 left-6 text-white">
                     <h3 className="text-3xl font-bold mb-3">{card.title}</h3>
-                    <Button className="bg-white text-indigo-600 hover:bg-indigo-50 font-semibold border-0 shadow-lg hover:shadow-xl transition-all duration-200">
+                    <Button className="bg-white text-indigo-600 hover:bg-indigo-50 font-semibold border-0 shadow-lg">
                       <Play className="h-4 w-4 mr-2" />
                       Try Now
                     </Button>
@@ -189,25 +176,18 @@ const Index = () => {
       {/* Global Services Section */}
       <ServicesSection />
 
-      {/* Enhanced Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
-        {/* Floating elements */}
-        <div className="absolute inset-0 opacity-20">
-          <Sparkles className="absolute top-10 left-20 h-6 w-6 animate-spin" />
-          <Zap className="absolute bottom-20 right-30 h-8 w-8 animate-bounce" />
-          <Stars className="absolute top-1/2 left-10 h-7 w-7 animate-pulse" />
-        </div>
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 relative">
+      {/* Call to Action */}
+      <section className="py-20 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-5xl font-bold mb-8">Ready to Start Your AI Journey?</h2>
           <p className="text-xl text-blue-100 mb-10 leading-relaxed">
             Join millions of people worldwide who are already learning and growing with AI assistance
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button className="bg-white text-indigo-600 hover:bg-indigo-50 px-10 py-5 text-lg font-semibold rounded-full border-0 shadow-2xl hover:shadow-white/20 transition-all duration-300">
+            <Button className="bg-white text-indigo-600 hover:bg-indigo-50 px-10 py-5 text-lg font-semibold rounded-full border-0 shadow-xl">
               🎤 Start Speaking Now
             </Button>
-            <Button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-indigo-600 px-10 py-5 text-lg font-semibold rounded-full transition-all duration-300">
+            <Button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-indigo-600 px-10 py-5 text-lg font-semibold rounded-full">
               📱 Download App
             </Button>
           </div>
