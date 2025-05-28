@@ -12,29 +12,29 @@ import { Card } from '@/components/ui/card';
 const Index = () => {
   const quickActions = [
     {
-      title: "Learn Something",
-      description: "Discover new skills through voice-guided lessons",
+      title: "Learn",
+      description: "Voice-guided lessons",
       icon: <BookOpen className="h-8 w-8" />,
       color: "bg-gradient-to-br from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700",
       path: "/learn"
     },
     {
-      title: "Use AI Assistant",
-      description: "Get help with daily tasks and questions",
+      title: "AI Assistant",
+      description: "Get instant help",
       icon: <MessageCircle className="h-8 w-8" />,
       color: "bg-gradient-to-br from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700",
       path: "/assistant"
     },
     {
-      title: "Ask a Question",
-      description: "Speak your question, get instant answers",
+      title: "Ask Question",
+      description: "Speak and get answers",
       icon: <Mic className="h-8 w-8" />,
       color: "bg-gradient-to-br from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700",
       path: "/ask"
     },
     {
-      title: "Change Language",
-      description: "Switch to your preferred language",
+      title: "Language",
+      description: "Switch languages",
       icon: <Globe className="h-8 w-8" />,
       color: "bg-gradient-to-br from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700",
       path: "/language"
@@ -110,15 +110,15 @@ const Index = () => {
                 <Button
                   key={index}
                   onClick={() => handleQuickAction(action.path)}
-                  className={`${action.color} text-white p-6 h-auto rounded-2xl transition-all duration-300 hover:scale-105 shadow-xl border-0 min-h-[160px] flex flex-col justify-center`}
+                  className={`${action.color} text-white p-6 h-auto rounded-2xl transition-all duration-300 hover:scale-105 shadow-xl border-0 min-h-[140px] flex flex-col justify-center`}
                 >
-                  <div className="flex flex-col items-center space-y-4">
+                  <div className="flex flex-col items-center space-y-3">
                     <div className="bg-white/20 rounded-full p-3">
                       {action.icon}
                     </div>
-                    <div className="text-center space-y-2">
+                    <div className="text-center space-y-1">
                       <h3 className="font-bold text-lg text-white leading-tight">{action.title}</h3>
-                      <p className="text-sm text-white/95 leading-relaxed px-2">{action.description}</p>
+                      <p className="text-sm text-white/95 leading-relaxed">{action.description}</p>
                     </div>
                   </div>
                 </Button>

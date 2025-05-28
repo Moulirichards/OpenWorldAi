@@ -2,7 +2,7 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Globe, Users, Heart, Award, Target, Lightbulb } from 'lucide-react';
+import { Globe, Users, Heart, Award, Target, Lightbulb, Star, Quote } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 
 const About = () => {
@@ -61,6 +61,51 @@ const About = () => {
     }
   ];
 
+  const reviews = [
+    {
+      name: "Maria Rodriguez",
+      location: "Mexico City, Mexico",
+      rating: 5,
+      text: "This AI has changed my life! I couldn't read well, but now I can learn anything just by speaking. It understands my Spanish perfectly and teaches me in a way I understand.",
+      image: "photo-1494790108755-2616b6b2082e"
+    },
+    {
+      name: "Kwame Asante",
+      location: "Accra, Ghana",
+      rating: 5,
+      text: "As a farmer, I never thought technology could help me. But this AI taught me new farming techniques in my local language. My crops are better than ever!",
+      image: "photo-1507003211169-0a1dd7228f2d"
+    },
+    {
+      name: "Fatima Al-Zahra",
+      location: "Cairo, Egypt",
+      rating: 5,
+      text: "Learning English was so difficult until I found Open World AI. It speaks Arabic with me and slowly teaches me English. Now I can communicate with people worldwide.",
+      image: "photo-1520813792240-56fc4a3765a7"
+    },
+    {
+      name: "Rajesh Kumar",
+      location: "Mumbai, India",
+      rating: 5,
+      text: "I'm a street vendor who wanted to learn about digital payments. The AI explained everything in Hindi, step by step. Now my business has grown 300%!",
+      image: "photo-1472099645785-5658abf4ff4e"
+    },
+    {
+      name: "Ana Silva",
+      location: "São Paulo, Brazil",
+      rating: 5,
+      text: "My grandmother is 78 and never used technology. Now she talks to AI every day to learn about health and stay connected with family. It's amazing!",
+      image: "photo-1544005313-94ddf0286df2"
+    },
+    {
+      name: "Chen Wei",
+      location: "Beijing, China",
+      rating: 5,
+      text: "Working in a factory, I had no time for traditional classes. This AI teaches me during my breaks. I learned basic English and computer skills in just 3 months.",
+      image: "photo-1507003211169-0a1dd7228f2d"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -102,6 +147,45 @@ const About = () => {
                 className="rounded-2xl shadow-2xl"
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* User Reviews Section */}
+      <section className="py-20 bg-gradient-to-r from-blue-50 to-purple-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-center text-gray-900 mb-4">What Our Users Say</h2>
+          <p className="text-center text-gray-600 mb-16 max-w-3xl mx-auto">
+            Real stories from people whose lives have been transformed by AI accessibility
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {reviews.map((review, index) => (
+              <Card key={index} className="p-6 border-0 shadow-lg hover:shadow-xl transition-shadow bg-white">
+                <div className="flex items-center mb-4">
+                  <img
+                    src={`https://images.unsplash.com/${review.image}?auto=format&fit=crop&w=100&q=80`}
+                    alt={review.name}
+                    className="w-12 h-12 rounded-full object-cover mr-4"
+                  />
+                  <div>
+                    <h3 className="font-bold text-gray-900">{review.name}</h3>
+                    <p className="text-sm text-gray-600">{review.location}</p>
+                  </div>
+                </div>
+                
+                <div className="flex mb-4">
+                  {[...Array(review.rating)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 text-yellow-500 fill-current" />
+                  ))}
+                </div>
+                
+                <div className="relative">
+                  <Quote className="h-8 w-8 text-blue-200 absolute -top-2 -left-2" />
+                  <p className="text-gray-700 italic pl-6 leading-relaxed">{review.text}</p>
+                </div>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
