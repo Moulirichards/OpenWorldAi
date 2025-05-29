@@ -1,9 +1,9 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { LanguageProvider } from "./contexts/LanguageContext";
 import Index from "./pages/Index";
 import Learn from "./pages/Learn";
 import Services from "./pages/Services";
@@ -89,96 +89,98 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/learn" element={<Learn />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/careers" element={<Careers />} />
-          
-          {/* Learn category routes */}
-          <Route path="/learn/basic-technology" element={<BasicTechnology />} />
-          <Route path="/learn/health-wellness" element={<HealthWellness />} />
-          <Route path="/learn/financial-literacy" element={<FinancialLiteracy />} />
-          <Route path="/learn/job-skills" element={<JobSkills />} />
-          <Route path="/learn/education-basics" element={<EducationBasics />} />
-          <Route path="/learn/agriculture" element={<Agriculture />} />
-          
-          {/* Lesson routes */}
-          <Route path="/learn/lessons/smartphone-basics" element={<SmartphoneBasics />} />
-          <Route path="/learn/lessons/internet-safety" element={<InternetSafety />} />
-          <Route path="/learn/lessons/computer-basics" element={<ComputerBasics />} />
-          <Route path="/learn/lessons/email-basics" element={<EmailBasics />} />
-          <Route path="/learn/lessons/social-media-basics" element={<SocialMediaBasics />} />
-          <Route path="/learn/lessons/digital-banking" element={<DigitalBanking />} />
-          <Route path="/learn/lessons/health-tracking" element={<HealthTracking />} />
-          <Route path="/learn/lessons/job-applications" element={<JobApplications />} />
-          <Route path="/learn/lessons/online-learning" element={<OnlineLearning />} />
-          <Route path="/learn/lessons/smart-farming" element={<SmartFarming />} />
-          <Route path="/learn/lessons/quantum-computing" element={<QuantumComputing />} />
-          
-          {/* Service routes */}
-          <Route path="/services/web-development" element={<WebDevelopment />} />
-          <Route path="/services/ai-consulting" element={<AIConsulting />} />
-          <Route path="/services/mobile-apps" element={<MobileApps />} />
-          <Route path="/services/cloud-services" element={<CloudServices />} />
-          <Route path="/services/data-analytics" element={<DataAnalytics />} />
-          <Route path="/services/cybersecurity" element={<Cybersecurity />} />
-          <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
-          <Route path="/services/it-support" element={<ITSupport />} />
-          <Route path="/services/blockchain-solutions" element={<BlockchainSolutions />} />
-          
-          {/* AI Assistant routes */}
-          <Route path="/assistant" element={<Assistant />} />
-          <Route path="/ask" element={<AskQuestion />} />
-          <Route path="/ai/chatbot" element={<ChatBot />} />
-          <Route path="/ai/voice-assistant" element={<VoiceAssistant />} />
-          <Route path="/ai/recommendations" element={<SmartRecommendations />} />
-          
-          {/* Career routes */}
-          <Route path="/careers/jobs" element={<JobOpenings />} />
-          
-          {/* Profile routes */}
-          <Route path="/profile" element={<UserProfile />} />
-          <Route path="/profile/settings" element={<Settings />} />
-          <Route path="/profile/progress" element={<LearningProgress />} />
-          <Route path="/profile/achievements" element={<Achievements />} />
-          
-          {/* Support routes */}
-          <Route path="/support" element={<HelpCenter />} />
-          <Route path="/support/live-chat" element={<LiveChat />} />
-          <Route path="/support/tutorials" element={<Tutorials />} />
-          <Route path="/support/faq" element={<FAQ />} />
-          
-          {/* Language routes */}
-          <Route path="/language" element={<LanguageSettings />} />
-          <Route path="/language/translation" element={<TranslationServices />} />
-          <Route path="/language/learning" element={<LanguageLearning />} />
-          
-          {/* Community routes */}
-          <Route path="/community/forum" element={<Forum />} />
-          <Route path="/community/events" element={<Events />} />
-          
-          {/* Resource routes */}
-          <Route path="/resources/downloads" element={<Downloads />} />
-          <Route path="/resources/links" element={<Links />} />
-          
-          {/* Tool routes */}
-          <Route path="/tools/calculator" element={<Calculator />} />
-          <Route path="/tools/calendar" element={<Calendar />} />
-          <Route path="/tools/notes" element={<Notes />} />
-          <Route path="/tools/video-chat" element={<VideoChat />} />
-          
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
+    <LanguageProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/learn" element={<Learn />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/careers" element={<Careers />} />
+            
+            {/* Learn category routes */}
+            <Route path="/learn/basic-technology" element={<BasicTechnology />} />
+            <Route path="/learn/health-wellness" element={<HealthWellness />} />
+            <Route path="/learn/financial-literacy" element={<FinancialLiteracy />} />
+            <Route path="/learn/job-skills" element={<JobSkills />} />
+            <Route path="/learn/education-basics" element={<EducationBasics />} />
+            <Route path="/learn/agriculture" element={<Agriculture />} />
+            
+            {/* Lesson routes */}
+            <Route path="/learn/lessons/smartphone-basics" element={<SmartphoneBasics />} />
+            <Route path="/learn/lessons/internet-safety" element={<InternetSafety />} />
+            <Route path="/learn/lessons/computer-basics" element={<ComputerBasics />} />
+            <Route path="/learn/lessons/email-basics" element={<EmailBasics />} />
+            <Route path="/learn/lessons/social-media-basics" element={<SocialMediaBasics />} />
+            <Route path="/learn/lessons/digital-banking" element={<DigitalBanking />} />
+            <Route path="/learn/lessons/health-tracking" element={<HealthTracking />} />
+            <Route path="/learn/lessons/job-applications" element={<JobApplications />} />
+            <Route path="/learn/lessons/online-learning" element={<OnlineLearning />} />
+            <Route path="/learn/lessons/smart-farming" element={<SmartFarming />} />
+            <Route path="/learn/lessons/quantum-computing" element={<QuantumComputing />} />
+            
+            {/* Service routes */}
+            <Route path="/services/web-development" element={<WebDevelopment />} />
+            <Route path="/services/ai-consulting" element={<AIConsulting />} />
+            <Route path="/services/mobile-apps" element={<MobileApps />} />
+            <Route path="/services/cloud-services" element={<CloudServices />} />
+            <Route path="/services/data-analytics" element={<DataAnalytics />} />
+            <Route path="/services/cybersecurity" element={<Cybersecurity />} />
+            <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
+            <Route path="/services/it-support" element={<ITSupport />} />
+            <Route path="/services/blockchain-solutions" element={<BlockchainSolutions />} />
+            
+            {/* AI Assistant routes */}
+            <Route path="/assistant" element={<Assistant />} />
+            <Route path="/ask" element={<AskQuestion />} />
+            <Route path="/ai/chatbot" element={<ChatBot />} />
+            <Route path="/ai/voice-assistant" element={<VoiceAssistant />} />
+            <Route path="/ai/recommendations" element={<SmartRecommendations />} />
+            
+            {/* Career routes */}
+            <Route path="/careers/jobs" element={<JobOpenings />} />
+            
+            {/* Profile routes */}
+            <Route path="/profile" element={<UserProfile />} />
+            <Route path="/profile/settings" element={<Settings />} />
+            <Route path="/profile/progress" element={<LearningProgress />} />
+            <Route path="/profile/achievements" element={<Achievements />} />
+            
+            {/* Support routes */}
+            <Route path="/support" element={<HelpCenter />} />
+            <Route path="/support/live-chat" element={<LiveChat />} />
+            <Route path="/support/tutorials" element={<Tutorials />} />
+            <Route path="/support/faq" element={<FAQ />} />
+            
+            {/* Language routes */}
+            <Route path="/language" element={<LanguageSettings />} />
+            <Route path="/language/translation" element={<TranslationServices />} />
+            <Route path="/language/learning" element={<LanguageLearning />} />
+            
+            {/* Community routes */}
+            <Route path="/community/forum" element={<Forum />} />
+            <Route path="/community/events" element={<Events />} />
+            
+            {/* Resource routes */}
+            <Route path="/resources/downloads" element={<Downloads />} />
+            <Route path="/resources/links" element={<Links />} />
+            
+            {/* Tool routes */}
+            <Route path="/tools/calculator" element={<Calculator />} />
+            <Route path="/tools/calendar" element={<Calendar />} />
+            <Route path="/tools/notes" element={<Notes />} />
+            <Route path="/tools/video-chat" element={<VideoChat />} />
+            
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </LanguageProvider>
   </QueryClientProvider>
 );
 

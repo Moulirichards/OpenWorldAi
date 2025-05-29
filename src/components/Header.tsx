@@ -3,15 +3,21 @@ import React, { useState } from 'react';
 import { Mic, MicOff, Search, Menu, X, Brain, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isListening, setIsListening] = useState(false);
   const [isMoreOpen, setIsMoreOpen] = useState(false);
+  const { currentLanguage, setCurrentLanguage, t } = useLanguage();
 
   const toggleVoice = () => {
     setIsListening(!isListening);
     // Voice functionality would be implemented here
+  };
+
+  const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setCurrentLanguage(e.target.value);
   };
 
   const moreMenuItems = [
@@ -45,12 +51,12 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">
-            <Link to="/" className="text-white/90 hover:text-white font-medium transition-colors px-3 py-2 rounded-lg hover:bg-white/10">Home</Link>
-            <Link to="/about" className="text-white/90 hover:text-white font-medium transition-colors px-3 py-2 rounded-lg hover:bg-white/10">About</Link>
-            <Link to="/services" className="text-white/90 hover:text-white font-medium transition-colors px-3 py-2 rounded-lg hover:bg-white/10">Services</Link>
-            <Link to="/learn" className="text-white/90 hover:text-white font-medium transition-colors px-3 py-2 rounded-lg hover:bg-white/10">Learn</Link>
-            <Link to="/careers" className="text-white/90 hover:text-white font-medium transition-colors px-3 py-2 rounded-lg hover:bg-white/10">Careers</Link>
-            <Link to="/contact" className="text-white/90 hover:text-white font-medium transition-colors px-3 py-2 rounded-lg hover:bg-white/10">Contact</Link>
+            <Link to="/" className="text-white/90 hover:text-white font-medium transition-colors px-3 py-2 rounded-lg hover:bg-white/10">{t('nav.home')}</Link>
+            <Link to="/about" className="text-white/90 hover:text-white font-medium transition-colors px-3 py-2 rounded-lg hover:bg-white/10">{t('nav.about')}</Link>
+            <Link to="/services" className="text-white/90 hover:text-white font-medium transition-colors px-3 py-2 rounded-lg hover:bg-white/10">{t('nav.services')}</Link>
+            <Link to="/learn" className="text-white/90 hover:text-white font-medium transition-colors px-3 py-2 rounded-lg hover:bg-white/10">{t('nav.learn')}</Link>
+            <Link to="/careers" className="text-white/90 hover:text-white font-medium transition-colors px-3 py-2 rounded-lg hover:bg-white/10">{t('nav.careers')}</Link>
+            <Link to="/contact" className="text-white/90 hover:text-white font-medium transition-colors px-3 py-2 rounded-lg hover:bg-white/10">{t('nav.contact')}</Link>
             
             {/* More Dropdown */}
             <div className="relative">
@@ -58,7 +64,7 @@ const Header = () => {
                 onClick={() => setIsMoreOpen(!isMoreOpen)}
                 className="text-white/90 hover:text-white font-medium transition-colors px-3 py-2 rounded-lg hover:bg-white/10 flex items-center"
               >
-                More
+                {t('nav.more')}
                 <ChevronDown className="h-4 w-4 ml-1" />
               </button>
               
@@ -82,7 +88,11 @@ const Header = () => {
           {/* Voice & Language Controls */}
           <div className="flex items-center space-x-3">
             {/* Language Selector */}
-            <select className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg px-3 py-2 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-white/50">
+            <select 
+              value={currentLanguage}
+              onChange={handleLanguageChange}
+              className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg px-3 py-2 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-white/50"
+            >
               <option value="en" className="text-gray-800">🇺🇸 English</option>
               <option value="es" className="text-gray-800">🇪🇸 Español</option>
               <option value="fr" className="text-gray-800">🇫🇷 Français</option>
@@ -126,12 +136,12 @@ const Header = () => {
         {isMenuOpen && (
           <div className="lg:hidden border-t border-white/20 py-4 bg-white/10 rounded-b-lg">
             <div className="flex flex-col space-y-3">
-              <Link to="/" className="text-white/90 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-white/20">Home</Link>
-              <Link to="/about" className="text-white/90 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-white/20">About</Link>
-              <Link to="/services" className="text-white/90 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-white/20">Services</Link>
-              <Link to="/learn" className="text-white/90 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-white/20">Learn</Link>
-              <Link to="/careers" className="text-white/90 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-white/20">Careers</Link>
-              <Link to="/contact" className="text-white/90 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-white/20">Contact</Link>
+              <Link to="/" className="text-white/90 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-white/20">{t('nav.home')}</Link>
+              <Link to="/about" className="text-white/90 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-white/20">{t('nav.about')}</Link>
+              <Link to="/services" className="text-white/90 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-white/20">{t('nav.services')}</Link>
+              <Link to="/learn" className="text-white/90 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-white/20">{t('nav.learn')}</Link>
+              <Link to="/careers" className="text-white/90 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-white/20">{t('nav.careers')}</Link>
+              <Link to="/contact" className="text-white/90 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-white/20">{t('nav.contact')}</Link>
               <hr className="border-white/20 my-2" />
               <div className="text-white/70 text-sm font-medium px-4 py-1">More Options</div>
               {moreMenuItems.map((item) => (

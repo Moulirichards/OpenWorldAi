@@ -8,33 +8,36 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Index = () => {
+  const { t } = useLanguage();
+  
   const quickActions = [
     {
-      title: "Learn",
-      description: "Voice lessons",
+      title: t('action.learn'),
+      description: t('action.learn.desc'),
       icon: <BookOpen className="h-8 w-8" />,
       color: "bg-gradient-to-br from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700",
       path: "/learn"
     },
     {
-      title: "AI Assistant",
-      description: "Get instant help",
+      title: t('action.assistant'),
+      description: t('action.assistant.desc'),
       icon: <MessageCircle className="h-8 w-8" />,
       color: "bg-gradient-to-br from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700",
       path: "/assistant"
     },
     {
-      title: "Ask Question",
-      description: "Speak and get answers",
+      title: t('action.ask'),
+      description: t('action.ask.desc'),
       icon: <Mic className="h-8 w-8" />,
       color: "bg-gradient-to-br from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700",
       path: "/ask"
     },
     {
-      title: "Services",
-      description: "Technology solutions",
+      title: t('action.services'),
+      description: t('action.services.desc'),
       icon: <Cog className="h-8 w-8" />,
       color: "bg-gradient-to-br from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700",
       path: "/services"
@@ -90,15 +93,14 @@ const Index = () => {
           <div className="text-center">
             {/* Main Title */}
             <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight">
-              AI for All: Empowering Every Voice,{' '}
               <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                Everywhere
+                {t('hero.title')}
               </span>
             </h1>
             
             {/* Tagline */}
             <p className="text-xl md:text-3xl bg-gradient-to-r from-gray-700 to-gray-600 bg-clip-text text-transparent mb-12 max-w-4xl mx-auto font-medium">
-              🌍 Connecting the World, One Voice at a Time ✨
+              {t('hero.tagline')}
             </p>
 
             {/* Main Voice Interface */}
@@ -106,18 +108,18 @@ const Index = () => {
               <div className="text-center">
                 <VoiceButton size="lg" className="mb-6 shadow-lg" />
                 <h2 className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
-                  🎤 Talk to AI Now
+                  {t('hero.talk')}
                 </h2>
                 <p className="text-gray-600 mb-6 text-lg">
-                  Press the button and speak in any language. AI will understand and help you immediately.
+                  {t('hero.description')}
                 </p>
                 <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-6 border border-purple-100">
-                  <p className="text-sm text-gray-700 italic mb-3 font-medium">✨ Try saying:</p>
+                  <p className="text-sm text-gray-700 italic mb-3 font-medium">{t('hero.try')}</p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
-                    <span className="bg-white/80 rounded-lg p-2 shadow-sm">"How do I apply for a job?"</span>
-                    <span className="bg-white/80 rounded-lg p-2 shadow-sm">"Teach me about computers"</span>
-                    <span className="bg-white/80 rounded-lg p-2 shadow-sm">"Help me with math"</span>
-                    <span className="bg-white/80 rounded-lg p-2 shadow-sm">"What is healthy food?"</span>
+                    <span className="bg-white/80 rounded-lg p-2 shadow-sm">{t('hero.examples.job')}</span>
+                    <span className="bg-white/80 rounded-lg p-2 shadow-sm">{t('hero.examples.learn')}</span>
+                    <span className="bg-white/80 rounded-lg p-2 shadow-sm">{t('hero.examples.math')}</span>
+                    <span className="bg-white/80 rounded-lg p-2 shadow-sm">{t('hero.examples.health')}</span>
                   </div>
                 </div>
               </div>
@@ -246,18 +248,18 @@ const Index = () => {
       {/* Call to Action */}
       <section className="py-20 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-5xl font-bold mb-8">Ready to Start Your AI Journey?</h2>
+          <h2 className="text-5xl font-bold mb-8">{t('cta.title')}</h2>
           <p className="text-xl text-blue-100 mb-10 leading-relaxed">
-            Join millions of people worldwide who are already learning and growing with AI assistance
+            {t('cta.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link to="/ask">
               <Button className="bg-white text-indigo-600 hover:bg-indigo-50 px-10 py-5 text-lg font-semibold rounded-full border-0 shadow-xl">
-                🎤 Start Speaking Now
+                {t('cta.speak')}
               </Button>
             </Link>
             <Button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-indigo-600 px-10 py-5 text-lg font-semibold rounded-full">
-              📱 Download App
+              {t('cta.download')}
             </Button>
           </div>
         </div>
