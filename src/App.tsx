@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -30,6 +31,7 @@ import HealthTracking from "./pages/learn/lessons/HealthTracking";
 import JobApplications from "./pages/learn/lessons/JobApplications";
 import OnlineLearning from "./pages/learn/lessons/OnlineLearning";
 import SmartFarming from "./pages/learn/lessons/SmartFarming";
+import QuantumComputing from "./pages/learn/lessons/QuantumComputing";
 
 // Service pages
 import WebDevelopment from "./pages/services/WebDevelopment";
@@ -40,6 +42,7 @@ import DataAnalytics from "./pages/services/DataAnalytics";
 import Cybersecurity from "./pages/services/Cybersecurity";
 import DigitalMarketing from "./pages/services/DigitalMarketing";
 import ITSupport from "./pages/services/ITSupport";
+import BlockchainSolutions from "./pages/services/BlockchainSolutions";
 
 // AI Assistant pages
 import Assistant from "./pages/ai/Assistant";
@@ -80,6 +83,14 @@ import Links from "./pages/resources/Links";
 import Calculator from "./pages/tools/Calculator";
 import Calendar from "./pages/tools/Calendar";
 import Notes from "./pages/tools/Notes";
+import VideoChat from "./pages/tools/VideoChat";
+
+// Enterprise pages
+import Dashboard from "./pages/enterprise/Dashboard";
+import Analytics from "./pages/enterprise/Analytics";
+
+// Premium pages
+import Subscription from "./pages/premium/Subscription";
 
 const queryClient = new QueryClient();
 
@@ -116,6 +127,7 @@ const App = () => (
           <Route path="/learn/lessons/job-applications" element={<JobApplications />} />
           <Route path="/learn/lessons/online-learning" element={<OnlineLearning />} />
           <Route path="/learn/lessons/smart-farming" element={<SmartFarming />} />
+          <Route path="/learn/lessons/quantum-computing" element={<QuantumComputing />} />
           
           {/* Service routes */}
           <Route path="/services/web-development" element={<WebDevelopment />} />
@@ -126,6 +138,7 @@ const App = () => (
           <Route path="/services/cybersecurity" element={<Cybersecurity />} />
           <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
           <Route path="/services/it-support" element={<ITSupport />} />
+          <Route path="/services/blockchain-solutions" element={<BlockchainSolutions />} />
           
           {/* AI Assistant routes */}
           <Route path="/assistant" element={<Assistant />} />
@@ -166,6 +179,14 @@ const App = () => (
           <Route path="/tools/calculator" element={<Calculator />} />
           <Route path="/tools/calendar" element={<Calendar />} />
           <Route path="/tools/notes" element={<Notes />} />
+          <Route path="/tools/video-chat" element={<VideoChat />} />
+          
+          {/* Enterprise routes */}
+          <Route path="/enterprise/dashboard" element={<Dashboard />} />
+          <Route path="/enterprise/analytics" element={<Analytics />} />
+          
+          {/* Premium routes */}
+          <Route path="/premium/subscription" element={<Subscription />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
