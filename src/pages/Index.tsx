@@ -1,8 +1,8 @@
+
 import React from 'react';
-import { Mic, BookOpen, MessageCircle, Globe, Play, ArrowRight } from 'lucide-react';
+import { Mic, BookOpen, MessageCircle, Globe, Play, ArrowRight, Cog, Users, TrendingUp, Zap } from 'lucide-react';
 import Header from '@/components/Header';
 import VoiceButton from '@/components/VoiceButton';
-import AIForEveryoneSection from '@/components/AIForEveryoneSection';
 import ServicesSection from '@/components/ServicesSection';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -33,11 +33,11 @@ const Index = () => {
       path: "/ask"
     },
     {
-      title: "Language",
-      description: "Switch languages",
-      icon: <Globe className="h-8 w-8" />,
+      title: "Services",
+      description: "Technology solutions",
+      icon: <Cog className="h-8 w-8" />,
       color: "bg-gradient-to-br from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700",
-      path: "/language"
+      path: "/services"
     }
   ];
 
@@ -56,10 +56,29 @@ const Index = () => {
     }
   ];
 
-  const handleQuickAction = (path: string) => {
-    // For now, just show an alert. In a real app, you'd navigate to the page
-    alert(`Navigating to ${path}`);
-  };
+  const interactiveTools = [
+    {
+      title: "Global Community",
+      description: "Connect with learners worldwide and share experiences",
+      icon: <Users className="h-12 w-12 text-blue-600" />,
+      path: "/community/forum",
+      gradient: "from-blue-400 to-blue-600"
+    },
+    {
+      title: "Progress Tracking",
+      description: "Monitor your learning journey with detailed analytics",
+      icon: <TrendingUp className="h-12 w-12 text-green-600" />,
+      path: "/profile/progress", 
+      gradient: "from-green-400 to-green-600"
+    },
+    {
+      title: "Smart Tools",
+      description: "Access calculator, calendar, notes and video chat tools",
+      icon: <Zap className="h-12 w-12 text-purple-600" />,
+      path: "/tools/calculator",
+      gradient: "from-purple-400 to-purple-600"
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
@@ -170,8 +189,56 @@ const Index = () => {
         </div>
       </section>
 
-      {/* AI for Everyone Section */}
-      <AIForEveryoneSection />
+      {/* Interactive Tools Section - Replacing the duplicate AI section */}
+      <section className="py-20 bg-gradient-to-br from-purple-50 to-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Explore More Features</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Discover additional tools and features to enhance your learning experience
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {interactiveTools.map((tool, index) => (
+              <Link key={index} to={tool.path}>
+                <Card className="p-8 text-center hover:shadow-xl transition-all duration-300 hover:scale-105 border-0 shadow-lg bg-white/90 backdrop-blur-sm cursor-pointer">
+                  <div className={`bg-gradient-to-r ${tool.gradient} rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6`}>
+                    {tool.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{tool.title}</h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed">{tool.description}</p>
+                  <Button className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold">
+                    Explore
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
+                </Card>
+              </Link>
+            ))}
+          </div>
+
+          {/* Navigation Links */}
+          <div className="bg-white rounded-2xl shadow-xl p-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Quick Navigation</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+              {[
+                { name: "Profile", path: "/profile", icon: "👤" },
+                { name: "Support", path: "/support", icon: "🎧" },
+                { name: "Community", path: "/community/forum", icon: "👥" },
+                { name: "Resources", path: "/resources/downloads", icon: "📁" },
+                { name: "Tools", path: "/tools/calculator", icon: "🔧" }
+              ].map((link, index) => (
+                <Link key={index} to={link.path}>
+                  <Button variant="outline" className="w-full p-4 h-auto flex flex-col items-center space-y-2 hover:bg-indigo-50 hover:border-indigo-300">
+                    <span className="text-2xl">{link.icon}</span>
+                    <span className="text-sm font-medium">{link.name}</span>
+                  </Button>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Global Services Section */}
       <ServicesSection />

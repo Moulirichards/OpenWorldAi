@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { MapPin, Clock, Users, Globe, Briefcase, Heart, ArrowRight, Play } from 'lucide-react';
+import { MapPin, Clock, Users, Globe, Briefcase, Heart, ArrowRight, Play, GraduationCap, Coffee } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card } from '@/components/ui/card';
@@ -43,6 +43,27 @@ const Careers = () => {
     }
   ];
 
+  const internshipPrograms = [
+    {
+      title: "AI Research Intern",
+      duration: "3-6 months",
+      location: "Remote/Hybrid",
+      description: "Work on cutting-edge AI research projects with our team of experts"
+    },
+    {
+      title: "Product Design Intern",
+      duration: "3-4 months", 
+      location: "San Francisco, CA",
+      description: "Help design user experiences that make AI accessible to everyone"
+    },
+    {
+      title: "Engineering Intern",
+      duration: "6 months",
+      location: "Remote",
+      description: "Build features that impact millions of users worldwide"
+    }
+  ];
+
   const benefits = [
     {
       icon: <Globe className="h-8 w-8 text-white" />,
@@ -67,6 +88,29 @@ const Careers = () => {
       title: "Growth Opportunities",
       description: "Continuous learning and career development",
       color: "bg-purple-600"
+    }
+  ];
+
+  const employeeLife = [
+    {
+      title: "Flexible Work",
+      description: "Work from anywhere with flexible hours that fit your life",
+      icon: "🌍"
+    },
+    {
+      title: "Learning Budget",
+      description: "$2000 annual budget for courses, conferences, and books",
+      icon: "📚"
+    },
+    {
+      title: "Health & Wellness",
+      description: "Comprehensive health insurance and wellness programs",
+      icon: "🏥"
+    },
+    {
+      title: "Team Retreats",
+      description: "Annual company retreats in amazing locations worldwide",
+      icon: "✈️"
     }
   ];
 
@@ -179,6 +223,64 @@ const Careers = () => {
                   Apply Now
                   <ArrowRight className="h-4 w-4 ml-2" />
                 </Button>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Internship Program */}
+      <section className="py-16 bg-white/80 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <GraduationCap className="h-16 w-16 text-blue-600 mx-auto mb-4" />
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Internship Program</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Launch your career with hands-on experience in AI and global technology
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {internshipPrograms.map((program, index) => (
+              <Card key={index} className="p-6 hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-white/90 backdrop-blur-sm">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{program.title}</h3>
+                <div className="flex gap-4 text-sm text-gray-600 mb-4">
+                  <span className="flex items-center">
+                    <Clock className="h-4 w-4 mr-1" />
+                    {program.duration}
+                  </span>
+                  <span className="flex items-center">
+                    <MapPin className="h-4 w-4 mr-1" />
+                    {program.location}
+                  </span>
+                </div>
+                <p className="text-gray-600 mb-4">{program.description}</p>
+                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+                  Apply for Internship
+                </Button>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Employee Life */}
+      <section className="py-16 bg-gradient-to-r from-purple-50 to-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <Coffee className="h-16 w-16 text-purple-600 mx-auto mb-4" />
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Employee Life</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              More than just a job - it's a lifestyle that supports your growth and well-being
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {employeeLife.map((item, index) => (
+              <Card key={index} className="p-6 text-center hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-white/90 backdrop-blur-sm">
+                <div className="text-4xl mb-4">{item.icon}</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-gray-600">{item.description}</p>
               </Card>
             ))}
           </div>
