@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { MapPin, Clock, Users, Globe, Briefcase, Heart, ArrowRight, Play } from 'lucide-react';
 import Header from '@/components/Header';
@@ -39,22 +40,6 @@ const Careers = () => {
       department: "Content",
       description: "Create and localize educational content for diverse global audiences in multiple languages.",
       requirements: ["Multilingual abilities", "Content creation", "Cultural sensitivity"]
-    },
-    {
-      title: "Data Privacy Specialist",
-      location: "Berlin, Germany",
-      type: "Full-time",
-      department: "Legal/Compliance",
-      description: "Ensure our AI systems comply with global privacy regulations while serving diverse populations.",
-      requirements: ["Legal background", "Privacy regulations", "International law knowledge"]
-    },
-    {
-      title: "Community Outreach Manager",
-      location: "São Paulo, Brazil",
-      type: "Full-time",
-      department: "Community",
-      description: "Build partnerships with local organizations to bring AI education to underserved communities.",
-      requirements: ["Community engagement", "Partnership building", "Local market knowledge"]
     }
   ];
 
@@ -200,60 +185,8 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* Culture & Values */}
-      <section className="py-16 bg-white/80 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Culture</h2>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                We believe in the power of diversity, inclusion, and accessibility. Our team spans across continents, 
-                cultures, and backgrounds, united by a common goal: making AI accessible to everyone.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-1">
-                    <span className="text-white text-sm">✓</span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Accessibility First</h3>
-                    <p className="text-gray-600">Every decision considers users of all abilities and backgrounds</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-1">
-                    <span className="text-white text-sm">✓</span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Global Perspective</h3>
-                    <p className="text-gray-600">We think globally and act locally in every market</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-1">
-                    <span className="text-white text-sm">✓</span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Continuous Learning</h3>
-                    <p className="text-gray-600">We invest in our team's growth and development</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl p-8 text-center">
-              <div className="text-6xl mb-4">🌍</div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">50+ Countries</h3>
-              <p className="text-gray-600 mb-6">Our team represents the diversity of our global user base</p>
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold border-0">
-                Meet Our Team
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Application Process */}
-      <section className="py-16 bg-gradient-to-r from-gray-50 to-blue-50">
+      <section className="py-16 bg-white/80 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Application Process</h2>

@@ -85,13 +85,6 @@ import Calendar from "./pages/tools/Calendar";
 import Notes from "./pages/tools/Notes";
 import VideoChat from "./pages/tools/VideoChat";
 
-// Enterprise pages
-import Dashboard from "./pages/enterprise/Dashboard";
-import Analytics from "./pages/enterprise/Analytics";
-
-// Premium pages
-import Subscription from "./pages/premium/Subscription";
-
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -180,13 +173,6 @@ const App = () => (
           <Route path="/tools/calendar" element={<Calendar />} />
           <Route path="/tools/notes" element={<Notes />} />
           <Route path="/tools/video-chat" element={<VideoChat />} />
-          
-          {/* Enterprise routes */}
-          <Route path="/enterprise/dashboard" element={<Dashboard />} />
-          <Route path="/enterprise/analytics" element={<Analytics />} />
-          
-          {/* Premium routes */}
-          <Route path="/premium/subscription" element={<Subscription />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
