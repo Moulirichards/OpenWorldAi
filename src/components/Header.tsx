@@ -54,7 +54,6 @@ const Header = () => {
             <Link to="/" className="text-white/90 hover:text-white font-medium transition-colors px-3 py-2 rounded-lg hover:bg-white/10">{t('nav.home')}</Link>
             <Link to="/about" className="text-white/90 hover:text-white font-medium transition-colors px-3 py-2 rounded-lg hover:bg-white/10">{t('nav.about')}</Link>
             <Link to="/categories" className="text-white/90 hover:text-white font-medium transition-colors px-3 py-2 rounded-lg hover:bg-white/10">Categories</Link>
-            <Link to="/careers" className="text-white/90 hover:text-white font-medium transition-colors px-3 py-2 rounded-lg hover:bg-white/10">{t('nav.careers')}</Link>
             <Link to="/contact" className="text-white/90 hover:text-white font-medium transition-colors px-3 py-2 rounded-lg hover:bg-white/10">{t('nav.contact')}</Link>
             
             {/* More Dropdown */}
@@ -138,7 +137,6 @@ const Header = () => {
               <Link to="/" className="text-white/90 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-white/20">{t('nav.home')}</Link>
               <Link to="/about" className="text-white/90 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-white/20">{t('nav.about')}</Link>
               <Link to="/categories" className="text-white/90 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-white/20">Categories</Link>
-              <Link to="/careers" className="text-white/90 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-white/20">{t('nav.careers')}</Link>
               <Link to="/contact" className="text-white/90 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-white/20">{t('nav.contact')}</Link>
               <hr className="border-white/20 my-2" />
               <div className="text-white/70 text-sm font-medium px-4 py-1">More Options</div>

@@ -9,7 +9,6 @@ import Index from "./pages/Index";
 import Categories from "./pages/Categories";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Careers from "./pages/Careers";
 import NotFound from "./pages/NotFound";
 
 // AI Assistant pages
@@ -18,9 +17,6 @@ import AskQuestion from "./pages/ai/AskQuestion";
 import ChatBot from "./pages/ai/ChatBot";
 import VoiceAssistant from "./pages/ai/VoiceAssistant";
 import SmartRecommendations from "./pages/ai/SmartRecommendations";
-
-// Career pages
-import JobOpenings from "./pages/careers/JobOpenings";
 
 // Profile pages
 import UserProfile from "./pages/profile/UserProfile";
@@ -67,7 +63,6 @@ const App = () => (
             <Route path="/categories" element={<Categories />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/careers" element={<Careers />} />
             
             {/* AI Assistant routes */}
             <Route path="/assistant" element={<Assistant />} />
@@ -75,9 +70,6 @@ const App = () => (
             <Route path="/ai/chatbot" element={<ChatBot />} />
             <Route path="/ai/voice-assistant" element={<VoiceAssistant />} />
             <Route path="/ai/recommendations" element={<SmartRecommendations />} />
-            
-            {/* Career routes */}
-            <Route path="/careers/jobs" element={<JobOpenings />} />
             
             {/* Profile routes */}
             <Route path="/profile" element={<UserProfile />} />
