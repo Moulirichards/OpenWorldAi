@@ -15,11 +15,11 @@ const Index = () => {
   
   const quickActions = [
     {
-      title: t('action.learn'),
-      description: t('action.learn.desc'),
+      title: "Categories",
+      description: "Explore all available categories and content",
       icon: <BookOpen className="h-8 w-8" />,
       color: "bg-gradient-to-br from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700",
-      path: "/learn"
+      path: "/categories"
     },
     {
       title: t('action.assistant'),
@@ -36,20 +36,20 @@ const Index = () => {
       path: "/ask"
     },
     {
-      title: t('action.services'),
-      description: t('action.services.desc'),
+      title: "Tools",
+      description: "Access helpful tools and utilities",
       icon: <Cog className="h-8 w-8" />,
       color: "bg-gradient-to-br from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700",
-      path: "/services"
+      path: "/tools/calculator"
     }
   ];
 
   const featuredCards = [
     {
-      title: "Learn with AI",
-      description: "Interactive lessons that adapt to your learning style and pace",
+      title: "AI-Powered Categories",
+      description: "Discover content organized by intelligent categorization",
       image: "photo-1581091226825-a6a2a5aee158",
-      features: ["Voice guidance", "Visual examples", "Progress tracking"]
+      features: ["Smart organization", "Easy navigation", "Personalized content"]
     },
     {
       title: "Talk to AI",
@@ -69,7 +69,7 @@ const Index = () => {
     },
     {
       title: "Progress Tracking",
-      description: "Monitor your learning journey with detailed analytics",
+      description: "Monitor your journey with detailed analytics",
       icon: <TrendingUp className="h-12 w-12 text-green-600" />,
       path: "/profile/progress", 
       gradient: "from-green-400 to-green-600"
@@ -117,7 +117,7 @@ const Index = () => {
                   <p className="text-sm text-gray-700 italic mb-3 font-medium">{t('hero.try')}</p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
                     <span className="bg-white/80 rounded-lg p-2 shadow-sm">{t('hero.examples.job')}</span>
-                    <span className="bg-white/80 rounded-lg p-2 shadow-sm">{t('hero.examples.learn')}</span>
+                    <span className="bg-white/80 rounded-lg p-2 shadow-sm">"Show me categories"</span>
                     <span className="bg-white/80 rounded-lg p-2 shadow-sm">{t('hero.examples.math')}</span>
                     <span className="bg-white/80 rounded-lg p-2 shadow-sm">{t('hero.examples.health')}</span>
                   </div>
@@ -191,13 +191,13 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Interactive Tools Section - Replacing the duplicate AI section */}
+      {/* Interactive Tools Section */}
       <section className="py-20 bg-gradient-to-br from-purple-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Explore More Features</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover additional tools and features to enhance your learning experience
+              Discover additional tools and features to enhance your experience
             </p>
           </div>
 
