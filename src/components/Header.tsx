@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Mic, MicOff, Search, Menu, X, Brain, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -40,7 +39,7 @@ const Header = () => {
               </div>
               <div>
                 <h1 className="text-xl font-bold text-white">
-                  Open World AI
+                  openocean
                 </h1>
                 <p className="text-xs text-blue-200 hidden sm:block">
                   AI for Everyone
