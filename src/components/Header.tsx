@@ -34,15 +34,15 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <div className="flex items-center space-x-3 mr-4">
-              <div className="bg-white/20 rounded-lg p-2">
+            <div className="flex items-center space-x-3">
+              <div className="bg-white/20 rounded-lg p-2 flex items-center justify-center">
                 <Brain className="h-8 w-8 text-white" />
               </div>
-              <div>
-                <h1 className="text-xl font-bold text-white">
+              <div className="flex flex-col justify-center">
+                <h1 className="text-xl font-bold text-white leading-tight">
                   openocean
                 </h1>
-                <p className="text-xs text-blue-200 hidden sm:block">
+                <p className="text-xs text-blue-200 hidden sm:block leading-tight">
                   AI for Everyone
                 </p>
               </div>
