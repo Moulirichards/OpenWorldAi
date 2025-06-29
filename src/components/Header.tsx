@@ -29,20 +29,20 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 shadow-lg border-b border-purple-500/30 sticky top-0 z-50">
+    <header className="bg-black shadow-lg border-b border-gray-800 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <div className="flex items-center space-x-3">
-              <div className="bg-white/20 rounded-lg p-2 flex items-center justify-center">
+              <div className="bg-white/10 rounded-lg p-2 flex items-center justify-center border border-gray-700">
                 <Brain className="h-8 w-8 text-white" />
               </div>
               <div className="flex flex-col justify-center">
                 <h1 className="text-xl font-bold text-white leading-tight">
                   openocean
                 </h1>
-                <p className="text-xs text-blue-200 hidden sm:block leading-tight">
+                <p className="text-xs text-gray-300 hidden sm:block leading-tight">
                   AI for Everyone
                 </p>
               </div>
@@ -51,16 +51,16 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">
-            <Link to="/" className="text-white/90 hover:text-white font-medium transition-colors px-3 py-2 rounded-lg hover:bg-white/10">{t('nav.home')}</Link>
-            <Link to="/about" className="text-white/90 hover:text-white font-medium transition-colors px-3 py-2 rounded-lg hover:bg-white/10">{t('nav.about')}</Link>
-            <Link to="/categories" className="text-white/90 hover:text-white font-medium transition-colors px-3 py-2 rounded-lg hover:bg-white/10">Categories</Link>
-            <Link to="/contact" className="text-white/90 hover:text-white font-medium transition-colors px-3 py-2 rounded-lg hover:bg-white/10">{t('nav.contact')}</Link>
+            <Link to="/" className="text-gray-300 hover:text-white font-medium transition-colors px-3 py-2 rounded-lg hover:bg-gray-800">{t('nav.home')}</Link>
+            <Link to="/about" className="text-gray-300 hover:text-white font-medium transition-colors px-3 py-2 rounded-lg hover:bg-gray-800">{t('nav.about')}</Link>
+            <Link to="/categories" className="text-gray-300 hover:text-white font-medium transition-colors px-3 py-2 rounded-lg hover:bg-gray-800">Categories</Link>
+            <Link to="/contact" className="text-gray-300 hover:text-white font-medium transition-colors px-3 py-2 rounded-lg hover:bg-gray-800">{t('nav.contact')}</Link>
             
             {/* More Dropdown */}
             <div className="relative">
               <button
                 onClick={() => setIsMoreOpen(!isMoreOpen)}
-                className="text-white/90 hover:text-white font-medium transition-colors px-3 py-2 rounded-lg hover:bg-white/10 flex items-center"
+                className="text-gray-300 hover:text-white font-medium transition-colors px-3 py-2 rounded-lg hover:bg-gray-800 flex items-center"
               >
                 {t('nav.more')}
                 <ChevronDown className="h-4 w-4 ml-1" />
@@ -89,7 +89,7 @@ const Header = () => {
             <select 
               value={currentLanguage}
               onChange={handleLanguageChange}
-              className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg px-3 py-2 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-white/50"
+              className="bg-gray-800 border border-gray-600 rounded-lg px-3 py-2 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-gray-500"
             >
               <option value="en" className="text-gray-800">🇺🇸 English</option>
               <option value="es" className="text-gray-800">🇪🇸 Español</option>
@@ -104,22 +104,22 @@ const Header = () => {
               onClick={toggleVoice}
               className={`p-3 rounded-full transition-colors border-2 ${
                 isListening 
-                  ? 'bg-red-500 hover:bg-red-600 border-red-300' 
-                  : 'bg-white/20 hover:bg-white/30 border-white/30'
+                  ? 'bg-white text-black border-gray-300 hover:bg-gray-100' 
+                  : 'bg-gray-800 hover:bg-gray-700 border-gray-600 text-white'
               }`}
               size="sm"
             >
               {isListening ? (
-                <MicOff className="h-5 w-5 text-white" />
+                <MicOff className="h-5 w-5" />
               ) : (
-                <Mic className="h-5 w-5 text-white" />
+                <Mic className="h-5 w-5" />
               )}
             </Button>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-2 rounded-lg bg-white/20 hover:bg-white/30 transition-colors border border-white/30"
+              className="lg:hidden p-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors border border-gray-600"
             >
               {isMenuOpen ? (
                 <X className="h-5 w-5 text-white" />
@@ -132,19 +132,19 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden border-t border-white/20 py-4 bg-white/10 rounded-b-lg">
+          <div className="lg:hidden border-t border-gray-800 py-4 bg-gray-900 rounded-b-lg">
             <div className="flex flex-col space-y-3">
-              <Link to="/" className="text-white/90 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-white/20">{t('nav.home')}</Link>
-              <Link to="/about" className="text-white/90 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-white/20">{t('nav.about')}</Link>
-              <Link to="/categories" className="text-white/90 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-white/20">Categories</Link>
-              <Link to="/contact" className="text-white/90 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-white/20">{t('nav.contact')}</Link>
-              <hr className="border-white/20 my-2" />
-              <div className="text-white/70 text-sm font-medium px-4 py-1">More Options</div>
+              <Link to="/" className="text-gray-300 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-gray-800">{t('nav.home')}</Link>
+              <Link to="/about" className="text-gray-300 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-gray-800">{t('nav.about')}</Link>
+              <Link to="/categories" className="text-gray-300 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-gray-800">Categories</Link>
+              <Link to="/contact" className="text-gray-300 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-gray-800">{t('nav.contact')}</Link>
+              <hr className="border-gray-700 my-2" />
+              <div className="text-gray-400 text-sm font-medium px-4 py-1">More Options</div>
               {moreMenuItems.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
-                  className="text-white/90 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-white/20"
+                  className="text-gray-300 hover:text-white font-medium py-2 transition-colors px-4 rounded-lg hover:bg-gray-800"
                 >
                   {item.name}
                 </Link>
